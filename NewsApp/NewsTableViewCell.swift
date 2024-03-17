@@ -29,27 +29,27 @@ class NewsTableViewCell: UITableViewCell {
    static let identifier = "NewsTableViewCell"
     
     private let newsTitleLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 20, weight: .bold)
-        return label
+      let label = UILabel()
+      label.numberOfLines = 0
+      label.font = .systemFont(ofSize: 20, weight: .bold)
+      return label
     }()
-    
+
     private let subtitleLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 17, weight: .light)
-        return label
+      let label = UILabel()
+      label.numberOfLines = 0
+      label.font = .systemFont(ofSize: 17, weight: .light)
+      return label
     }()
-    
+
     private let newsImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.layer.cornerRadius = 7
-        imageView.layer.masksToBounds = true
-        imageView.clipsToBounds = true
-        imageView.backgroundColor = .secondarySystemBackground
-        imageView.contentMode = .scaleAspectFill
-        return imageView
+      let imageView = UIImageView()
+      imageView.layer.cornerRadius = 7
+      imageView.layer.masksToBounds = true
+      imageView.clipsToBounds = true
+      imageView.backgroundColor = .secondarySystemBackground
+      imageView.contentMode = .scaleAspectFill
+      return imageView
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -66,11 +66,9 @@ class NewsTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        newsTitleLabel.frame = CGRect(x: 10, y: 0, width: contentView.frame.width - 170, height: 70)
-        
-        subtitleLabel.frame = CGRect(x: 10, y: 70, width: contentView.frame.width - 170, height: contentView.frame.size.height/2)
-        
-        newsImageView.frame = CGRect(x: contentView.frame.size.width - 160, y: 5, width: 140, height: contentView.frame.size.height - 10)
+        newsImageView.frame = CGRect(x: 5, y: 0, width: contentView.frame.width - 20, height: 150)
+        newsTitleLabel.frame = CGRect(x: 10, y: 150, width: contentView.frame.width - 20, height: 70)
+        subtitleLabel.frame = CGRect(x: 10, y: 120, width: contentView.frame.width - 20, height: contentView.frame.size.height - 70)
     }
     
     override func prepareForReuse() {
